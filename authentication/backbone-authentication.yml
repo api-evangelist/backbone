@@ -1,0 +1,32 @@
+generated: '2026-07-18'
+method: searched
+source: https://backbone.com/.well-known/openid-configuration
+notes: >-
+  Auth metadata published on backbone.com is the Shopify Customer Account OIDC /
+  OAuth2 authorization server (issuer shopify.com/authentication/36563550340). It
+  governs customer-account login and the Shopify Customer Account API + Customer
+  Account MCP API. There is no first-party Backbone developer API; this is the
+  real, published auth surface for the store.
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorizationCode, refreshToken, jwt-bearer]
+  pkce: [S256]
+schemes:
+- name: ShopifyCustomerAccountOIDC
+  type: openIdConnect
+  openIdConnectUrl: https://backbone.com/.well-known/openid-configuration
+  issuer: https://shopify.com/authentication/36563550340
+  authorization_endpoint: https://shopify.com/authentication/36563550340/oauth/authorize
+  token_endpoint: https://shopify.com/authentication/36563550340/oauth/token
+  end_session_endpoint: https://shopify.com/authentication/36563550340/logout
+  jwks_uri: https://shopify.com/authentication/36563550340/.well-known/jwks.json
+  grant_types: [authorization_code, refresh_token, 'urn:ietf:params:oauth:grant-type:jwt-bearer']
+  token_endpoint_auth_methods: [client_secret_basic]
+  id_token_signing_alg: [RS256]
+  code_challenge_methods: [S256]
+  scopes:
+  - openid
+  - email
+  - customer-account-api:full
+  - customer-account-mcp-api:full
+  sources: [well-known/backbone-openid-configuration.json]
