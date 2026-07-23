@@ -1,8 +1,29 @@
 aid: backbone
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/backbone.png
 name: Backbone
-description: 'Backbone is a company surfaced as a portfolio company of index-ventures and added to the
-  API Evangelist network as a stub for enrichment. Sector: entertainment. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Backbone is a mobile gaming company that makes the Backbone One controller — a
+  snap-on gamepad for iPhone and Android — and the Backbone app, a mobile gaming
+  platform that unifies a player's game library across cloud gaming, console
+  Remote Play, and streaming services with game discovery, capture, and social
+  features. The company sells hardware and accessories through a Shopify-hosted
+  storefront (backbone.com) that exposes an agent-commerce surface via the
+  Universal Commerce Protocol (UCP) MCP endpoint and Shopify Customer Account
+  OIDC. Backbone is a portfolio company of Index Ventures. This profile was
+  enriched from Backbone's public web surface; the company publishes no
+  first-party developer API.
 url: https://raw.githubusercontent.com/api-evangelist/backbone/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,10 +33,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Entertainment
+- Gaming
+- Mobile Gaming
+- Gaming Controller
+- Consumer Electronics
+- Hardware
+- Ecommerce
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,4 +51,25 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://playbackbone.com/
+  url: https://backbone.com/
+- type: Support
+  url: https://help.backbone.com/hc/en-us
+- type: TermsOfService
+  url: https://backbone.com/policies/terms-of-service
+- type: PrivacyPolicy
+  url: https://backbone.com/policies/privacy-policy
+- type: LLMsTxt
+  url: llms/backbone-llms.txt
+- type: WellKnown
+  url: well-known/backbone-well-known.yml
+- type: MCPServer
+  url: mcp/backbone-mcp.yml
+- type: Authentication
+  url: authentication/backbone-authentication.yml
+- type: DomainSecurity
+  url: security/backbone-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

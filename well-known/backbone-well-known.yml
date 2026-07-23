@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: live probe of https://backbone.com/.well-known/*
+host: https://backbone.com
+notes: >-
+  backbone.com is a Shopify-hosted storefront. The discovery documents below are
+  served on Backbone's own domain but provided by the Shopify commerce platform
+  (Customer Account OIDC + Universal Commerce Protocol). No RFC 9116 security.txt
+  or RFC 8615 api-catalog is published.
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: backbone-openid-configuration.json
+  note: Shopify Customer Account OIDC discovery (issuer shopify.com/authentication/36563550340)
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: backbone-oauth-authorization-server.json
+  note: RFC 8414 authorization-server metadata (mirrors the OIDC discovery)
+- path: /.well-known/ucp
+  status: 200
+  file: backbone-ucp.json
+  note: Universal Commerce Protocol (ucp.dev) merchant profile — MCP + embedded shopping services
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
