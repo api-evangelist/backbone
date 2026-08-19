@@ -2,18 +2,18 @@ generated: '2026-07-18'
 method: searched
 status: published
 source: https://backbone.com/llms.txt + https://backbone.com/.well-known/ucp
-notes: >-
-  Backbone's storefront (backbone.com, a Shopify store) exposes an agent-commerce
-  MCP endpoint via the Universal Commerce Protocol (ucp.dev). This is a
-  platform-provided (Shopify UCP) shopping server, not a first-party Backbone
-  product API. Tools are the documented UCP shopping surface; a live tools/list
-  call is Cloudflare bot-challenged, so tool names are taken from the published
-  llms.txt agent flow and the /.well-known/ucp capabilities, not fabricated.
+notes: Backbone's storefront (backbone.com, a Shopify store) exposes an agent-commerce MCP endpoint via
+  the Universal Commerce Protocol (ucp.dev). This is a platform-provided (Shopify UCP) shopping server,
+  not a first-party Backbone product API. Tools are the documented UCP shopping surface; a live tools/list
+  call is Cloudflare bot-challenged, so tool names are taken from the published llms.txt agent flow and
+  the /.well-known/ucp capabilities, not fabricated.
 server:
   name: backbone-ucp-shopping
   transport: http
   protocol: ucp
-  ucp_versions: ['2026-04-08', '2026-01-23']
+  ucp_versions:
+  - '2026-04-08'
+  - '2026-01-23'
   url: https://backbone.com/api/ucp/mcp
   canonical_url: https://backbonelabs.myshopify.com/api/ucp/mcp
   spec: https://ucp.dev/2026-04-08/specification/overview/
@@ -44,3 +44,11 @@ tools:
 - name: complete_checkout
   description: Finalize the purchase — buyer must approve payment.
   source: llms.txt agent flow / dev.ucp.shopping.checkout
+deployment:
+  mode: remote
+  endpoint: https://backbone.com/api/ucp/mcp
+  verified: probed
+  probe: live
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
