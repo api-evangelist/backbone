@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/backbone/integrations
+- https://n8n.io/integrations/backbone/
+- https://composio.dev/toolkits/backbone
+- https://monid.ai/tools/backbone
+checked:
+- https://composio.dev/toolkits/backbone
+- https://monid.ai/tools/backbone
+- https://n8n.io/integrations/backbone/
+- https://zapier.com/apps/backbone/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
